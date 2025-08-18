@@ -56,14 +56,8 @@ root_agent = Agent(
     name="FileSearch",
     model="gemini-2.0-flash-lite",
     description="Answer the user",
-    instruction="""You are given tools that can interact with a base that contains user-specified knowledge.
-                   Answer the user questions based on this. This is for the TIM telecom company.
-                   Always start with the 'tool_search_file_suffix' to search the user suffix if provided,
-                   and then ask the user about the provided files (if any) and then move on to
-                   'get_information_about_filename' based on the answer from 'tool_search_file_suffix' that the user wants to know more about.
-                   If no suffix is provided, use: search_general_information_based_on_user_query to get files that contains similar results
-                   to what the user wants to know about, and then move to 'get_information_about_filename' to gather more information about the provided file. 
-                   From now on, all your responses must be in Brazilian Portuguese only. Regardless of the language I use to interact with you, your answer must 
-                   be in Brazilian Portuguese""",
+    instruction="""
+    Any instructions as you want 
+    """,
     tools=[tool_search_file_suffix, get_information_about_filename, search_general_information_based_on_user_query]
 )
